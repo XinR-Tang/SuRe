@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# OS
+.DS_Store
+
+# Local artifacts (not tracked)
+results/
+data/
+*.log

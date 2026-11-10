@@ -1,0 +1,38 @@
+# SuRe - Python dependencies
+#
+# Captured from the `AD` conda environment actually used to run SuRe
+# (Python 3.10.16, CUDA 12.8, one A100). Versions are pinned to that env so the
+# numbers in the paper can be reproduced.
+#
+#   conda create -n AD python=3.10.16 -y
+#   conda activate AD
+#   pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
+#   pip install -r requirements.txt
+#
+# If you have no GPU build of torch yet, the two torch lines below are enough on
+# their own; point pip at the CUDA wheel index matching your driver
+# (cu121 / cu124 / cu126 / cu128) instead of PyPI.
+
+# --- PyTorch stack -----------------------------------------------------------
+torch==2.8.0
+torchvision==0.23.0
+
+# --- diffusion backbone: SD1.5, SDXL, SD3, FLUX.1-dev ------------------------
+diffusers==0.32.0
+transformers==4.50.3
+accelerate==1.5.2
+huggingface-hub==0.29.3
+safetensors==0.5.3
+
+# --- text encoders (CLIP / T5 tokenizers used by SD3 and FLUX.1-dev) ---------
+tokenizers==0.21.4
+sentencepiece==0.2.1
+protobuf==7.34.1
+ftfy==6.3.1
+regex==2024.11.6
+
+# --- numerics and I/O --------------------------------------------------------
+numpy==2.2.4
+Pillow==11.1.0
+tqdm==4.67.1
+matplotlib==3.10.1
